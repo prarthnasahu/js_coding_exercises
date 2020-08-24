@@ -53,11 +53,17 @@ function reverseWord(word) {
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Add your code here!
+  for(let i=0; i<reverseAllWords.length; i++){
+   // return reverseAllWords[i].split("").reverse().join("");
+   }
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
   // Add your code here!
+  const type = "Linux";
+let count = users.filter((obj) => obj.type === type).length;
+return count;
 }
 
 function getMeanScore(scores) {
