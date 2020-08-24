@@ -69,11 +69,26 @@ return count;
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   // Add your code here!
+  return eval(scores.join('+'))/scores.length;
 }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
   // Add your code here!
+let str='';
+if(n%3===0){
+str = "fizz";
+if (n%3===0 && n%5===0){
+str = "fizzbuzz";
+}
+}
+else if(n%5===0){
+str = "buzz";
+}
+else {
+return n;
+}
+return str;
 }
 
 module.exports = {
