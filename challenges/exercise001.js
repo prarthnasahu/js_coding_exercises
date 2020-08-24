@@ -53,9 +53,11 @@ function reverseWord(word) {
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Add your code here!
-  for(let i=0; i<reverseAllWords.length; i++){
-   // return reverseAllWords[i].split("").reverse().join("");
+  let emptyArray = [];
+for(let i=0; i<words.length; i++){
+   emptyArray.push(words[i].split("").reverse().join(""));
    }
+return emptyArray;
 }
 
 function countLinuxUsers(users) {
@@ -69,7 +71,8 @@ return count;
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   // Add your code here!
-  return eval(scores.join('+'))/scores.length;
+  let mean = eval(scores.join('+'))/scores.length;
+  return Math.round(mean*100)/100;
 }
 
 function simpleFizzBuzz(n) {
