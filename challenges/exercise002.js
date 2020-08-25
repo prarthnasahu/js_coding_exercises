@@ -18,6 +18,7 @@ return false;
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!
+  return Math.ceil(people/40);
 }
 
 function countSheep(arr) {
