@@ -24,12 +24,8 @@ function getBusNumbers(people) {
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
-let count = 0;
-for(let i=0; i<=arr.length; i++){
-if (arr.find(e => e === "sheep")){
-count++;}
-}
-return count;
+  const count = arr.toString().match(/sheep/g).length;
+  return count;
 }
 
 function hasMPostCode(person) {
