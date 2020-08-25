@@ -35,6 +35,11 @@ return count;
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
   // Your code here!
+  if(person.address.postCode.charAt(0) === "M")
+{return true;}
+else
+{return false;
+}
 }
 
 module.exports = {
