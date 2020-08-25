@@ -6,6 +6,18 @@ function getSquares(nums) {
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Your code here!
+  let result = "";
+    for(let i = 0 , len = words.length; i < len; i++) {
+      let currentStr = words[i];
+	    let tempStr = currentStr.toLowerCase();
+      if(i != 0) {
+	        // convert first letter to upper case (the word is in lowercase) 
+          tempStr = tempStr.substr(0, 1).toUpperCase() + tempStr.substr(1);
+       }      
+       result +=tempStr;
+          }  
+       return result;
+
 }
 
 function getTotalSubjects(people) {
