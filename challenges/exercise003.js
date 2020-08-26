@@ -40,15 +40,14 @@ function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   // Your code here!
-  for(i=0; i<menu.length; i++){
-    //if(Array.isArray(menu[i].ingredients)){
-      for(j=0; j<menu[i].ingredients.length; j++){
-      if(menu[i].ingredients[j]===ingredient)
-      return true;
-      else
-      return false;    
-}
-    }   }   
+  let result =false;
+    for(i=0; i<menu.length; i++)
+ {      for(j=0; j<menu[i].ingredients.length; j++)
+       {    if(menu[i].ingredients[j]===ingredient)
+          {    result = true;
+               break; }
+          }    
+}  return result;}   
 
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
@@ -62,7 +61,7 @@ let arr1Value = arr1[i];
 	if(arr1Value===arr2Value){
 	dup.push(arr1Value);}
 }	}
-return dup;
+return Array.from(new Set(dup)).sort();
 }
 
 module.exports = {
