@@ -27,11 +27,24 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
+  const charStart = "to ";
+  let newArr = [];
+  for(i=0; i<words.length; i++)
+  {	if(words[i].startsWith(charStart))
+	  {newArr.push(words[i]);
+	  }
+  } return newArr;
 }
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
+  let newArr = [];
+  for(i=0;i<nums.length;i++)
+  {	if(Number.isInteger(nums[i]))
+	  {newArr.push(nums[i])
+	  }
+  } return newArr;
 }
 
 function getCities(users) {
