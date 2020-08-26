@@ -74,13 +74,11 @@ function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   // Your code here
   let sent=[];
-  let regex = new RegExp(str);
-for(i=0;i<sentences.length;i++)
-{	if(sentences[i].match(regex))
-	{sent.push(sentences[i]);
-	}
+  for(i=0;i<sentences.length;i++)
+  {	if(sentences[i].toLowerCase().includes(str.toLowerCase()))
+    {sent.push(sentences[i]);
+    }
   } return sent;
-
 }
 
 function getLongestSides(triangles) {
