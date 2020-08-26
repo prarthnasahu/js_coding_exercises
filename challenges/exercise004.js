@@ -74,10 +74,11 @@ function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   // Your code here
   let sent=[];
-  for(i=0;i<sentences.length;i++)
-  {	if(sentences[i].includes(str))
-	  {sent.push(sentences[i]);
-	  }
+  let regex = new RegExp(str);
+for(i=0;i<sentences.length;i++)
+{	if(sentences[i].match(regex))
+	{sent.push(sentences[i]);
+	}
   } return sent;
 
 }
