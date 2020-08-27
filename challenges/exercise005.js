@@ -14,28 +14,8 @@ const findNextNumber = (nums, n) => {
 };
 
 const count1sand0s = str => {
-  if (str === undefined) throw new Error("str is required");
-  // Your code here!
-  let stringArr =[ ];
-for (i=0; i<=str.length-1; i++)
-{
-   stringArr.push(str.charAt(i));
-}
-  var output = {};
-
-for (var i=0; i < stringArr.length; i++) {
-    var word = stringArr[i];
-    if (output[word] === undefined) 
-    {
-      output[word] = 1;
-    } else 
-    {
-      output[word] += 1;
-    }
-    
-  }
-  return output;
-  
+  let result = [...str].reduce((a,e) => {a[e]=a[e]?a[e]+1:1; return a}, {});
+ return result;
 };
 
 const reverseNumber = n => {
@@ -72,13 +52,25 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
-  let rgxp = new RegExp(searchTerm, 'g');
-  if (haystack.name.match(rgxp) || haystack.description.match(rgxp) ||
-   haystack.store.match(rgxp)||haystack.price.toString().match(rgxp) ||
-   haystack.code.toString().match(rgxp))
-  return true;
-  else
-  return false;
+  let result =false ;
+  let strArr = [];
+Object.entries(haystack).map
+(haystack =>
+  {
+    const key   = haystack[0];
+    const value = haystack[1];
+    strArr.push(value.toString().toLowerCase());
+  }
+)
+  for (i = 0 ; i<strArr.length; i++)
+  {
+    if (strArr[i].includes(searchTerm.toLowerCase()))
+  {
+    result = true;
+    break;
+  }
+}
+  return result;
 };
 
 const getWordFrequencies = str => {
