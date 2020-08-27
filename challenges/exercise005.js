@@ -16,6 +16,8 @@ const findNextNumber = (nums, n) => {
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
+  let result = [...str].reduce((a,e) => {a[e]=a[e]?a[e]+1:1; return a}, {});
+  return result;
 };
 
 const reverseNumber = n => {
