@@ -87,10 +87,8 @@ function getLongestSides(triangles) {
   let newArrL = [];
   for(i=0;i<triangles.length;i++)
   {  let arr1 = triangles[i]; 
-   for(j=0;j<arr1.length;j++)
-    {arr1.sort(function(a, b){return b-a});
-    }
-	  newArrL.push(arr1[0]);
+    arr1.sort(function(a, b){return b-a});
+    newArrL.push(arr1[0]);
   } return newArrL;
 }
 
