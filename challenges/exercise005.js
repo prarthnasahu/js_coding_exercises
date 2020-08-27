@@ -18,11 +18,14 @@ const count1sand0s = str => {
   // Your code here!
   let result = [...str].reduce((a,e) => {a[e]=a[e]?a[e]+1:1; return a}, {});
   return result;
+  
 };
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
   // Your code here!
+  let rev = n.toString().split('').reverse().join('');
+  return parseFloat(rev);
 };
 
 const sumArrays = arrs => {
