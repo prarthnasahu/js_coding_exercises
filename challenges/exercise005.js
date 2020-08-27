@@ -16,8 +16,25 @@ const findNextNumber = (nums, n) => {
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
-  let result = [...str].reduce((a,e) => {a[e]=a[e]?a[e]+1:1; return a}, {});
-  return result;
+  let stringArr =[ ];
+for (i=0; i<=str.length-1; i++)
+{
+   stringArr.push(str.charAt(i));
+}
+  var output = {};
+
+for (var i=0; i < stringArr.length; i++) {
+    var word = stringArr[i];
+    if (output[word] === undefined) 
+    {
+      output[word] = 1;
+    } else 
+    {
+      output[word] += 1;
+    }
+    
+  }
+  return output;
   
 };
 
@@ -55,11 +72,32 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
+  let rgxp = new RegExp(searchTerm, 'g');
+  if (haystack.name.match(rgxp) || haystack.description.match(rgxp) ||
+   haystack.store.match(rgxp)||haystack.price.toString().match(rgxp) ||
+   haystack.code.toString().match(rgxp))
+  return true;
+  else
+  return false;
 };
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
+  let input = str.toLowerCase().replace(/[^a-zA-Z ]/g, "");
+  var output = {};
+  var strArr = input.split(" ");
+//A loop
+  for (var i=0; i < strArr.length; i++) {
+    var word = strArr[i];
+    if (output[word] === undefined) {
+      output[word] = 1;
+    } else {
+      output[word] += 1;
+    }
+    
+  }
+  return output;
 };
 
 module.exports = {
