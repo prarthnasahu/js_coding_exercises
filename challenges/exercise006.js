@@ -32,6 +32,21 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  let validLetters = ["G", "C", "T", "A"];
+
+let strR = 'True';
+let dnaArray = "GCTAT"
+
+for(let x = 0; x < dnaArray.length; x++){
+  if(!validLetters.includes(dnaArray[x])){
+     strR ='false';
+    return strR ;
+   break;
+   }
+break;
+ }
+ return strR ;
+
 };
 
 /**
@@ -117,22 +132,30 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-  staff =
+  let staff =
 [
    { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
    { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
    { name: "Isla", rota: ["Thursday", "Friday", "Sunday", "Monday"]},
    { name: "Mia", rota: ["Tuesday", "Wednesday", "Friday","Saturday"]},
-   { name: Sophia, rota: ["Sunday", "Monday", "Saturday","Wednesday","Saturday"]}
- ]
-let day = "Monday";
+   { name: "Sophia", rota: ["Sunday", "Monday", "Saturday","Wednesday","Saturday"]}
+ ];
+let day = 'Monday';
+let obj='';
+let sum = 0;
 //Thursday = off;
 
 for(let i=0;i<staff.length;i++)
 {
-  console.log(staff.rota[0]);
-  	
+for(j=0; j<staff[i].rota.length;j++)
+{
+if(staff[i].rota[j].includes(day))
+{
+sum++;
 }
+}
+}
+if(sum>3)return true;
 };
   
 module.exports = {
