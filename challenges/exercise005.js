@@ -14,8 +14,19 @@ const findNextNumber = (nums, n) => {
 };
 
 const count1sand0s = str => {
-  let result = [...str].reduce((a,e) => {a[e]=a[e]?a[e]+1:1; return a}, {});
- return result;
+  let sum=0;
+
+for(let i=0;i<str.length;i++)
+{
+sum += Number(str[i]);
+}
+
+return {
+	'1': sum,
+	'0':str.length-sum
+	};
+
+count1sand0s(str);
 };
 
 const reverseNumber = n => {
