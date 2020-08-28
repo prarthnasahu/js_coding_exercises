@@ -34,16 +34,16 @@ const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
   let validLetters = ["G", "C", "T", "A"];
 
-let strR = True;
+let strR = true;
 let dnaArray = "GCTAT"
 
 for(let x = 0; x < dnaArray.length; x++){
   if(!validLetters.includes(dnaArray[x])){
      strR =false;
-    return strR ;
+    
    break;
    }
-break;
+
  }
  return strR ;
 
