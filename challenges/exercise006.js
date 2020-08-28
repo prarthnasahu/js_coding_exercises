@@ -13,7 +13,7 @@ describe("sumMultiples", () => {
 
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
- // arr =[12, 15, 18, 35, 40, 45, 49, 56, 63];
+ arr =[12, 15, 18, 35, 40, 45, 49, 56, 63];
   let sum = 0;
   for(let i=0; i<arr.length; i++)
   {
@@ -100,6 +100,7 @@ const createMatrix = (n, fill) => {
     result.push(nArray);
   }
   return result;
+};
 
 /**
  * This function takes an array of staff objects in the format:
@@ -116,8 +117,24 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-};
+  staff =
+[
+   { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+   { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+   { name: "Isla", rota: ["Thursday", "Friday", "Sunday", "Monday"]},
+   { name: "Mia", rota: ["Tuesday", "Wednesday", "Friday","Saturday"]},
+   { name: Sophia, rota: ["Sunday", "Monday", "Saturday","Wednesday","Saturday"]}
+ ]
+let day = "Monday";
+//Thursday = off;
 
+for(let i=0;i<staff.length;i++)
+{
+  console.log(staff.rota[0]);
+  	
+}
+};
+  
 module.exports = {
   sumMultiples,
   isValidDNA,
