@@ -4,9 +4,16 @@
  * @param {Array} arr
  * @returns {Number}
  */
+describe("sumMultiples", () => {
+  test("returns the total of the numbers in all sub arrays", () => {
+    const arr = [12, 15, 18, 35, 40, 45, 49, 56, 63];
+    expect(sumMultiples(arr)).toBe(228);
+  });
+});
+
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  arr =[12, 15, 18, 35, 40, 45, 49, 56, 63];
+ // arr =[12, 15, 18, 35, 40, 45, 49, 56, 63];
   let sum = 0;
   for(let i=0; i<arr.length; i++)
   {
@@ -16,7 +23,6 @@ const sumMultiples = arr => {
 	  }
   }
     return sum;
-
 };
 
 /**
