@@ -4,16 +4,10 @@
  * @param {Array} arr
  * @returns {Number}
  */
-describe("sumMultiples", () => {
-  test("returns the sum of any numbers which are a multiple of 3 or 5", () => {
-    const arr = [12, 15, 18, 35, 40, 45, 49, 56, 63];
-    expect(sumMultiples(arr)).toBe(228);
-  });
-});
 
-const sumMultiples = arr => {
+ const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
- arr =[12, 15, 18, 35, 40, 45, 49, 56, 63];
+ //arr =[12, 15, 18, 35, 40, 45, 49, 56, 63];
   let sum = 0;
   for(let i=0; i<arr.length; i++)
   {
@@ -25,17 +19,17 @@ const sumMultiples = arr => {
     return sum;
 };
 
-/**
+/* *
  * This function will receive a string of characters and should return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
  * @param {String} str
  * @returns {Boolean}
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
-  let validLetters = ["G", "C", "T", "A"];
+  //let validLetters = ["G", "C", "T", "A"];
 
 let strR = true;
-let dnaArray = "GCTAT"
+let dnaArray = Array.from(str);
 
 for(let x = 0; x < dnaArray.length; x++){
   if(!validLetters.includes(dnaArray[x])){
@@ -64,7 +58,7 @@ const getComplementaryDNA = str => {
  * @returns {Boolean}
  */
 const isItPrime = n => {
-  n=7;
+  //n=7;
   if (n === undefined) throw new Error("n is required");
     if (n===1)
   {
@@ -132,16 +126,8 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-  let staff =
-[
-   { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
-   { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
-   { name: "Isla", rota: ["Thursday", "Friday", "Sunday", "Monday"]},
-   { name: "Mia", rota: ["Tuesday", "Wednesday", "Friday","Saturday"]},
-   { name: "Sophia", rota: ["Sunday", "Monday", "Saturday","Wednesday","Saturday"]}
- ];
-let day = 'Monday';
-let obj='';
+  
+//let day = 'Monday';
 let sum = 0;
 //Thursday = off;
 
