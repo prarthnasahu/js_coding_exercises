@@ -4,6 +4,15 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  n=123;
+let myStr = n.toString();
+let sum=0;
+for(i=0;i<myStr.length;i++)
+{
+sum+= Number(myStr[i]);
+}
+return sum;
+
 };
 
 /**
@@ -17,6 +26,16 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+  let start = 3;
+let end = 11;
+let step = 2;
+let range = [];
+
+for(let i=start; i<=end; i+=2)
+{
+range.push(i);
+}
+return range;
 };
 
 /**
