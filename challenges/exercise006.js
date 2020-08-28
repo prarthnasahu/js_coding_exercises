@@ -5,7 +5,7 @@
  * @returns {Number}
  */
 describe("sumMultiples", () => {
-  test("returns the total of the numbers in all sub arrays", () => {
+  test("returns the sum of any numbers which are a multiple of 3 or 5", () => {
     const arr = [12, 15, 18, 35, 40, 45, 49, 56, 63];
     expect(sumMultiples(arr)).toBe(228);
   });
@@ -49,7 +49,27 @@ const getComplementaryDNA = str => {
  * @returns {Boolean}
  */
 const isItPrime = n => {
+  n=7;
   if (n === undefined) throw new Error("n is required");
+    if (n===1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(var x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+
 };
 
 /**
