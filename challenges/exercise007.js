@@ -4,7 +4,7 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
-  n=123;
+  //n=123;
 let myStr = n.toString();
 let sum=0;
 for(i=0;i<myStr.length;i++)
@@ -26,9 +26,9 @@ return sum;
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
-  let start = 3;
-let end = 11;
-let step = 2;
+//   let start = 3;
+// let end = 11;
+// let step = 2;
 let range = [];
 
 for(let i=start; i<=end; i+=2)
